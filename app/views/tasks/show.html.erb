@@ -1,0 +1,21 @@
+<div class="container mt-3">
+
+  <h2><%= @task.title %></h2>
+  <p class="details"><%= @task.details %></p>
+
+  <div>
+  <% if @task.completed %>
+  <i class="fa-solid fa-anchor-circle-check">This task has been completed.</i>
+
+  <% else %>
+  This task is not completed yet.
+  <% end %>
+  </div>
+
+  <div class="mt-5">
+  <%= link_to "Update the task", edit_task_path, class: "btn-primary" %>
+  <%= link_to "Delete this task", task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-secondary"%>
+  <%= link_to "See all tasks", tasks_path, class: "btn-secondary" %>
+  </div>
+
+</div>
