@@ -1,4 +1,4 @@
-class TasksController < ApplicationController
+reclass TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
 
@@ -39,7 +39,7 @@ class TasksController < ApplicationController
     params.require(:task).permit(:title, :details, :completed)
   end
 
-  def set_task
+  def set_art
     @task = Task.find(params[:id])
   end
 
